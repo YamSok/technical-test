@@ -2,6 +2,8 @@
 
 Test technique de création d'une api permettant de réaliser des opérations CRUD sur des pics de montagne, et de faire une recherche de pics contenus dans une zone géographique.
 
+Stack utilisée : Django, Django Rest Framework, PostgreSQL
+
 ## Installation
 
 1. Installer Docker
