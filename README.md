@@ -1,6 +1,6 @@
 # Mountain Peak
 
-# README
+Test technique de création d'une api permettant de réaliser des opérations CRUD sur des pics de montagne, et de faire une recherche de pics contenus dans une zone géographique.
 
 ## Installation
 
@@ -12,7 +12,7 @@
 
 ### Lister les pics
 
-Lister tous les pics en envoyant une requête HTTP GET à `localhost:8000/peak/`
+Lister tous les pics en envoyant une requête HTTP GET à `localhost:8000/peak/`.
 
 ### Ajouter un pic
 
@@ -60,7 +60,7 @@ Récupérer un pic en envoyant une requête HTTP GET à `localhost:8000/peak/<id
 
 ### Modifier un pic
 
-Modifier un pic en envoyant une requête HTTP PUT à `localhost:8000/peak/<id_du_pic>` au même format que lors de la création :
+Modifier un pic en envoyant une requête HTTP PUT à `localhost:8000/peak/<id_du_pic>` au même format que lors de la création.
 
 ### Supprimer un pic
 
@@ -79,3 +79,7 @@ Envoyer une requête HTTP GET contenant une liste (>2) de coordonnées (lat, lon
     ]
 }
 ```
+
+Il est possible d'avoir un aperçu de cette zone en particulier via `localhost:8000/peak/map` qui affiche d'un marqueur tous le pics en base, ainsi que la zone définie par la requête d'exemple ci-dessus.
+
+![zone](./mont_blanc_zone.png)
