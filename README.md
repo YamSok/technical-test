@@ -29,7 +29,7 @@ Ajouter un pic en envoyant une requête HTTP POST à `localhost:8000/peak/add`. 
 
 ### Ajouter plusieurs pics
 
-Ajouter plusieurs pics en envoyant une requête HTTP POST contenant un liste de pic à `localhost:8000/peak/add-many`. Exemple :
+Ajouter plusieurs pics en envoyant une requête HTTP POST contenant une liste de pic à `localhost:8000/peak/add-many`. Exemple :
 
 ```json
 [
@@ -66,7 +66,7 @@ Modifier un pic en envoyant une requête HTTP PUT à `localhost:8000/peak/<id_du
 
 Supprimer un pic en envoyant une requête HTTP DELETE à `localhost:8000/peak/<id_du_pic>` :
 
-### Rechercher des pics parmis une zone géographique définie par un polygone :
+### Rechercher des pics parmis une zone géographique définie par un polygone
 
 Envoyer une requête HTTP GET contenant une liste (>2) de coordonnées (lat, lon) formant un polygone. Exemple de requête pour former une zone autour du Mont Blanc:
 
