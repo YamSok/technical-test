@@ -10,10 +10,11 @@ from .views import (
 from .views import map_view
 
 urlpatterns = [
-    path("", MountainPeakList.as_view(), name="item-list"),
-    path("add/", MountainPeakCreate.as_view(), name="item-create"),
-    path("add-many/", CreateMultiplePeaksView.as_view(), name="item-create-many"),
-    path("<int:pk>/", MountainPeakDetail.as_view(), name="item-detail"),
-    path("map", map_view, name="map"),
+    path("", MountainPeakList.as_view(), name="list"),
+    path("add/", MountainPeakCreate.as_view(), name="add"),
+    path("add-many/", CreateMultiplePeaksView.as_view(), name="add-many"),
+    path("<int:pk>/", MountainPeakDetail.as_view(), name="detail"),
     path("search/", MountainPeakSearchWithinZone.as_view(), name="search"),
+    path("map", map_view, name="map"),
+
 ]

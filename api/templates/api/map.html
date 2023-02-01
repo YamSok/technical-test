@@ -30,6 +30,8 @@
         var polygon = L.polygon([{{polygon_points|safe}}]).addTo(map);
         for (var i = 0; i < {{markers|safe}}.length; i++) {
                 var marker = L.marker({{markers|safe}}[i]).addTo(map);
+                marker.bindPopup({{markers_info|safe}}[i]);
+
             }
     </script>
 </html>

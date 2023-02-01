@@ -8,7 +8,7 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 
 
-# Afficher une carte avec le polygone pour construire des tests
+# Afficher une carte avec le polygone pour vérifier les zones géographiques
 def map_view(request):
 
     # zone du mont blanc
@@ -24,12 +24,19 @@ def map_view(request):
 
     # Afficher les pics de la base
     queryset = MountainPeak.objects.all().values()
+
+    # Marqueurs pour la carte
     markers = [[q["lat"], q["lon"]] for q in queryset]
+    markers_info = [f'{q["name"]} : {q["altitude"]}m' for q in queryset]
 
     return render(
         request,
         "api/map.html",
-        {"polygon_points": polygon_points, "markers": markers},
+        {
+            "polygon_points": polygon_points,
+            "markers": markers,
+            "markers_info": markers_info,
+        },
     )
 
 
@@ -74,6 +81,9 @@ class MountainPeakDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class MountainPeakSearchWithinZone(generics.ListAPIView):
+    # Rechercher les pics contenus dans une zone géographique définie par un
+    # ensemble de coordonnées GPS (lat, lon)
+
     def list(self, request):
 
         # Création d'un polygone à partir des points en entrée

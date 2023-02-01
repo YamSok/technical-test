@@ -86,13 +86,23 @@ WSGI_APPLICATION = "mountainpeak.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "mountainpeaks",
+        "NAME": "postgres",
         "USER": "postgres",
-        "PASSWORD": "Mountain_Peak",
-        "HOST": "localhost",
-        "PORT": 5432,
+        "PASSWORD": "postgres",
+        "HOST": "db",
+        # "PORT": 5432,
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "mountainpeaks",
+#         "USER": "postgres",
+#         "PASSWORD": "Mountain_Peak",
+#         "HOST": "localhost",
+#         "PORT": 5432,
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
