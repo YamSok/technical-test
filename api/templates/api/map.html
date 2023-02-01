@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+        <script
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""
+        ></script>
+    </head>
+    <body>
+        <div id="map" style="height: 500px; width: 100%"></div>
+    </body>
+    <script>
+        var map = L.map("map").setView([0, 0], 2);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+        // Format attendu
+        // var polygon = L.polygon([
+        //     [44.7598, 4.80821],
+        //     [44.68192, 10.5945],
+        //     [48.38324, 7.50742],
+        // ]).addTo(map);
+
+        var polygon = L.polygon([{{polygon_points|safe}}]).addTo(map);
+        for (var i = 0; i < {{markers|safe}}.length; i++) {
+                var marker = L.marker({{markers|safe}}[i]).addTo(map);
+            }
+    </script>
+</html>
